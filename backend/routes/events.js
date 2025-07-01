@@ -200,14 +200,8 @@ router.post(
   ],
   async (req, res) => {
     try {
-      console.log('=== Event Creation Request ===');
-      console.log('Request body:', req.body);
-      console.log('User from auth middleware:', req.user);
-      console.log('Headers:', req.headers);
-
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
-        console.log('Validation errors:', errors.array());
         return res.status(400).json({
           success: false,
           message: 'Validation failed',
@@ -216,16 +210,6 @@ router.post(
       }
 
       const { title, description, location, dateTime, category } = req.body;
-
-      console.log('Creating event with data:', {
-        title,
-        description,
-        location,
-        dateTime,
-        category,
-        creator: req.user._id,
-        creatorName: req.user.name,
-      });
 
       const event = new Event({
         title,

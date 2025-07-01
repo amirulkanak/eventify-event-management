@@ -80,9 +80,7 @@ const AddEventPage = () => {
 
     setIsLoading(true);
     try {
-      console.log('Submitting form data:', formData);
       const token = localStorage.getItem('token');
-      console.log('Token available:', !!token);
 
       const response = await axios.post('/events', formData, {
         headers: {
@@ -91,7 +89,6 @@ const AddEventPage = () => {
         },
       });
 
-      console.log('Event created successfully:', response.data);
       navigate('/my-events');
     } catch (err) {
       console.error('Error creating event:', err);
