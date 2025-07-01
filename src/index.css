@@ -1,1 +1,57 @@
 @import 'tailwindcss';
+@import 'tailwindcss';
+
+@theme {
+  --color-primary-50: oklch(97.1% 0.014 343.198);
+  --color-primary-100: oklch(94.8% 0.028 342.258);
+  --color-primary-200: oklch(89.9% 0.061 343.231);
+  --color-primary-300: oklch(83.1% 0.096 343.198);
+  --color-primary-400: oklch(74.5% 0.135 343.198);
+  --color-primary-500: oklch(62.5% 0.173 343.198);
+  --color-primary-600: oklch(59.2% 0.249 0.584);
+  --color-primary-700: oklch(52.5% 0.223 3.958);
+  --color-primary-800: oklch(30% 0 210);
+  --color-primary-900: oklch(25% 0 210);
+}
+
+@layer base {
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-white shadow-lg rounded-lg border border-gray-200;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+
+  .navbar-item {
+    @apply text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200;
+  }
+
+  .navbar-item-active {
+    @apply text-primary-600 bg-primary-50 px-3 py-2 rounded-md text-sm font-medium;
+  }
+}
