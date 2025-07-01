@@ -24,10 +24,7 @@ router.post(
     body('password')
       .isLength({ min: 6 })
       .withMessage('Password must be at least 6 characters long'),
-    body('photoURL')
-      .optional()
-      .isURL()
-      .withMessage('Please enter a valid photo URL'),
+    body('photoURL').isURL().withMessage('Please enter a valid photo URL'),
   ],
   async (req, res) => {
     try {

@@ -158,12 +158,13 @@ const RegisterPage = () => {
               <label
                 htmlFor="photoURL"
                 className="block text-sm font-medium text-gray-700">
-                Profile Photo URL (Optional)
+                Profile Photo URL
               </label>
               <input
                 id="photoURL"
                 name="photoURL"
                 type="url"
+                required
                 value={formData.photoURL}
                 onChange={handleChange}
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
