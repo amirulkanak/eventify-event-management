@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
-// import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../contexts/AuthContext';
 
 const HomePage = () => {
-  // const { isAuthenticated } = useAuth();
-  const isAuthenticated = false; // Replace with actual authentication logic
+  const { isAuthenticated } = useAuth();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
